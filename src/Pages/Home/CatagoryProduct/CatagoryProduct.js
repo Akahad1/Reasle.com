@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaMapMarkerAlt} from 'react-icons/fa';
+import BookingModal from '../../../SellerInformation.js/BookingModal/BookingModal';
 
 
 const CatagoryProduct = ({ product }) => {
@@ -15,8 +16,11 @@ const CatagoryProduct = ({ product }) => {
                     <p>Use-Years: ${UseYears}</p>
                     <p>Location : <FaMapMarkerAlt className='inline' /> { Location}</p>
                     <div className="card-actions  mt-3">
-                        <button   className="btn btn-primary">Book Now</button>
+                        <label htmlFor="bookingModal" className="btn btn-primary">Book Now</label>
                     </div>
+                </div>
+                <div>
+                    <BookingModal product={product}></BookingModal>
                 </div>
             </div>
 

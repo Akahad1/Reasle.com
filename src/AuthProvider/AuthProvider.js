@@ -11,6 +11,7 @@ const provider = new GoogleAuthProvider();
 export const AuthContext =createContext()
 const AuthProvider = ({children}) => {
     const [user,setUser]=useState('')
+    const [loding,setLoding]=useState(true)
 
 
     // create Eamil password
@@ -49,6 +50,7 @@ const AuthProvider = ({children}) => {
         const unSubcriber =onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser)
             console.log(currentUser)
+            setLoding(false)
         })
         return ()=> unSubcriber
 
@@ -60,7 +62,8 @@ const AuthProvider = ({children}) => {
         logOut,
         logInGoogle,
         profileUpdate,
-        logIn
+        logIn,
+        loding,
     }
 
     return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle} from 'react-icons/fa';
 import { useContext } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
@@ -7,7 +7,10 @@ import { useState } from 'react';
 
 const SingUp = () => {
   const {createEamilPassword,logInGoogle,profileUpdate}=useContext(AuthContext)
-  const [Error,setError]=useState('')
+  const loction =useLocation()
+  const navigate =useNavigate()
+  const [Error,setError]=useState()
+  const from=loction.state?.from.pathname || '/'
 
   
   const singupHandler=(event)=>{
@@ -18,16 +21,18 @@ const SingUp = () => {
     const PhotoUrl=form.PhotoUrl.value;
     const option =form.option.value
     const password =form.password.value;
-    allUpdate(name,PhotoUrl)
+    
     console.log(password,name,email,option,PhotoUrl) 
-    createEamilPassword(email,password,PhotoUrl)
+    createEamilPassword(email,password)
     .then(result=>{
       const user=result.user;
       console.log(user)
+      allUpdate(name,PhotoUrl)
       form.reset()
+      navigate(from ,{replace:true})
       
     })
-    .then(error=>{console.error(error)
+    .catch(error=>{console.error(error)
       const mages =error.message;
       setError(mages)
     })
@@ -39,7 +44,7 @@ const SingUp = () => {
       const user=result.user;
       console.log(user)
     })
-    .then(error=>console.log(error))
+    .catch(error=>console.log(error))
   }
 
 

@@ -4,6 +4,7 @@ import CatagoryProdutucs from "../../Pages/Home/CatagoryProducts/CatagoryProdutu
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 import SingUp from "../../Pages/SingUp/SingUp";
+import PrivetRoute from "../PrivetRoute/PrivetRoute";
 
  const router =createBrowserRouter([
     {path:'/', element: <Main></Main>,
@@ -11,7 +12,7 @@ import SingUp from "../../Pages/SingUp/SingUp";
         {path:'/',element: <Home></Home>},
         {path:'/login',element:<Login></Login>},
         {path:'/singup',element:<SingUp></SingUp>},
-        {path:'/catagory/:id',element:<CatagoryProdutucs></CatagoryProdutucs>,
+        {path:'/catagory/:id',element:<PrivetRoute><CatagoryProdutucs></CatagoryProdutucs></PrivetRoute>,
         loader: async({params})=>fetch(`http://localhost:5000/catagory/${params.id}`)
     }
     ]
