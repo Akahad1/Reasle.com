@@ -1,12 +1,23 @@
 import React from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../AuthProvider/AuthProvider';
 
 
 const Navber = () => {
+    const {user,logOut}=useContext(AuthContext)
+    const signOuthandler=()=>{
+      logOut()
+      .then(()=>{})
+      .then(error=>console.log(error))
+    }
   const maenuItem =<>
   <li><Link to='/'>Home</Link></li>
   <li><Link to='/login'>Login</Link></li>
   <li><Link to='/singup'>Singup</Link></li>
+  <button onClick={signOuthandler}>Log Out</button>
+  <button>{user?.email}</button>
+  <button>{user?.displayName}</button>
   
   </>
   
