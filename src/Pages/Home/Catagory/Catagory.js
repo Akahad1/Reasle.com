@@ -1,11 +1,13 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Catagory = ({allCatagory}) => {
-    const {name,img,descripetion
-    }=allCatagory;
+    const {name,img,descripetion,_id}=allCatagory;
+    
     return (
         <div className='m-7'>
-            <div className="card h-[550px] w-96 bg-base-100 shadow-xl">
+            <div className="card h-[400px] w-96 bg-base-100 shadow-xl">
   <figure className="px-10 pt-10">
     <img src={img} alt="Shoes" className="rounded-xl" />
   </figure>
@@ -14,7 +16,7 @@ const Catagory = ({allCatagory}) => {
     <p>{descripetion
 }</p>
     <div className="card-actions">
-      <button className="btn btn-primary">See Products</button>
+      <Link to={`/catagory/${_id}`}><button className="btn btn-primary">See Products</button></Link>
     </div>
   </div>
 </div>

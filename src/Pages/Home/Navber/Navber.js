@@ -24,7 +24,7 @@ const Navber = () => {
         {maenuItem}
       </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-xl font-signature">Resale.Com</a>
+    <button className="btn btn-ghost normal-case text-xl font-signature">Resale.Com</button>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal p-0">
@@ -33,7 +33,7 @@ const Navber = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Get started</a>
+    <Link>Get started</Link>
   </div>
 </div>
         </div>
