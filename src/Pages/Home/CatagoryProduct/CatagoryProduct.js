@@ -1,4 +1,6 @@
 import React from 'react';
+import { FaMapMarkerAlt} from 'react-icons/fa';
+
 
 const CatagoryProduct = ({ product }) => {
     const {name,img,Location,OriginalPrice,ResalePrice,UseYears} =product;
@@ -11,9 +13,9 @@ const CatagoryProduct = ({ product }) => {
                     <p>Original-Price: ${OriginalPrice}</p>
                     <p>Resale-Price: ${ResalePrice}</p>
                     <p>Use-Years: ${UseYears}</p>
-                    <p>Location : {Location}</p>
+                    <p>Location : <FaMapMarkerAlt className='inline' /> { Location}</p>
                     <div className="card-actions  mt-3">
-                        <button className="btn btn-primary">Buy Now</button>
+                        <button   className="btn btn-primary">Book Now</button>
                     </div>
                 </div>
             </div>

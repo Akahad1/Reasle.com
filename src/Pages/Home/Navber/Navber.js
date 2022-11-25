@@ -14,7 +14,7 @@ const Navber = () => {
         <div>
           
           
-           <div className="navbar bg-black">
+           <div className="navbar justify-between bg-black">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -32,9 +32,7 @@ const Navber = () => {
      {maenuItem}
     </ul>
   </div>
-  <div className="navbar-end">
-    <Link>Get started</Link>
-  </div>
+  
 </div>
         </div>
     );
