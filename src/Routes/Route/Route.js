@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../Layout/Main/Main";
+import Blogs from "../../Pages/Blogs/Blogs";
 import CatagoryProdutucs from "../../Pages/Home/CatagoryProducts/CatagoryProdutucs";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
@@ -14,7 +15,8 @@ import PrivetRoute from "../PrivetRoute/PrivetRoute";
         {path:'/singup',element:<SingUp></SingUp>},
         {path:'/catagory/:id',element:<PrivetRoute><CatagoryProdutucs></CatagoryProdutucs></PrivetRoute>,
         loader: async({params})=>fetch(`http://localhost:5000/catagory/${params.id}`)
-    }
+    },
+    {path:'/blogs',element:<Blogs></Blogs>}
     ]
 }
 ])

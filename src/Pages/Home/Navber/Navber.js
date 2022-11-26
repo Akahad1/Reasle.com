@@ -13,8 +13,10 @@ const Navber = () => {
     }
   const maenuItem =<>
   <li><Link to='/'>Home</Link></li>
-  <li><Link to='/login'>Login</Link></li>
   <li><Link to='/singup'>Singup</Link></li>
+  <li><Link to='/blogs'>Blogs</Link></li>
+  <li><Link to='/login'>Login</Link></li>
+  
   <button onClick={signOuthandler}>Log Out</button>
   <button>{user?.email}</button>
   <button>{user?.displayName}</button>

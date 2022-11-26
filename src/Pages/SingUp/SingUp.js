@@ -29,7 +29,24 @@ const SingUp = () => {
       console.log(user)
       allUpdate(name,PhotoUrl)
       form.reset()
-      navigate(from ,{replace:true})
+      const users={
+        name,
+        email,
+        role:option,
+        password
+      }
+      fetch('http://localhost:5000/users',{
+        method:"POST",
+        headers:{
+          'content-type': 'application/json'
+
+        },
+        body:JSON.stringify(users)
+      })
+      .then(res=>res.json())
+      .then(data=>console.log(data))
+
+      // navigate(from ,{replace:true})
       
     })
     .catch(error=>{console.error(error)

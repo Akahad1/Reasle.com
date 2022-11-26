@@ -3,8 +3,8 @@ import { FaMapMarkerAlt} from 'react-icons/fa';
 import BookingModal from '../../../SellerInformation.js/BookingModal/BookingModal';
 
 
-const CatagoryProduct = ({ product }) => {
-    const {name,img,Location,OriginalPrice,ResalePrice,UseYears} =product;
+const CatagoryProduct = ({ product}) => {
+    const {name,img,Location,OriginalPrice,ResalePrice,UseYears,catagoryId} =product;
     return (
         <div>
             <div className="card card-compact w-96 bg-base-100 mt-5 shadow-xl">
@@ -20,7 +20,7 @@ const CatagoryProduct = ({ product }) => {
                     </div>
                 </div>
                 <div>
-                    <BookingModal product={product}></BookingModal>
+                    <BookingModal product={product} id={catagoryId}></BookingModal>
                 </div>
             </div>
 
