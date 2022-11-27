@@ -33,7 +33,9 @@ const DasebordLayout = () => {
                                <> <p className=' text-white font-thin mt-2'><Link to='/Deshborad/addproduct'>Add Product</Link></p>
                                <p className=' text-white font-thin mt-2'><Link to='/Deshborad/myproducts'>My Products</Link></p>
                                <p className=' text-white font-thin mt-2'><Link to='/Deshborad/advertisted'>Advertisted</Link></p></>}
-                               { isadmin &&<p className=' text-white font-thin mt-2'><Link to='/Deshborad/alluser'>All User</Link></p>}
+                               { isadmin &&<><p className=' text-white font-thin mt-2'><Link to='/Deshborad/alluser'>All User</Link></p>
+                               <p className=' text-white font-thin mt-2'><Link to='/Deshborad/reportItem'>Report Item</Link></p>
+                               </>}
                                {/* <p className=' text-white font-thin mt-2'><Link to='/Deshborad/allbuyers'>ALL Buyers</Link></p> */}
                                </div>
                                 

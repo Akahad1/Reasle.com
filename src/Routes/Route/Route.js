@@ -12,6 +12,7 @@ import MyProducts from "../../Pages/SellerInformation/MyProducts/MyProducts";
 import SingUp from "../../Pages/SingUp/SingUp";
 import AllUsers from "../../Pages/UserInformation/AllUsers/AllUsers";
 import MyOrders from "../../Pages/UserInformation/MyOrders/MyOrders";
+import ReportItem from "../../Pages/UserInformation/ReportItem/ReportItem";
 
 import PrivetRoute from "../PrivetRoute/PrivetRoute";
 
@@ -35,7 +36,8 @@ children:[
     {path:'/Deshborad/addproduct',element:<PrivetRoute><AddProducts></AddProducts></PrivetRoute>},
     {path:'/Deshborad/myproducts',element:<PrivetRoute><MyProducts></MyProducts></PrivetRoute>},
     {path:"/Deshborad/alluser",element:<PrivetRoute><AllUsers></AllUsers></PrivetRoute>},
-    {path:"/Deshborad/advertisted",element:<PrivetRoute><Advertisted></Advertisted></PrivetRoute>}
+    {path:"/Deshborad/advertisted",element:<PrivetRoute><Advertisted></Advertisted></PrivetRoute>},
+    {path:"/Deshborad/reportItem",element:<PrivetRoute><ReportItem></ReportItem></PrivetRoute>}
 
 
 ]

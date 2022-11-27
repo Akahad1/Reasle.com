@@ -3,6 +3,7 @@ import Catagoreies from '../Catagoreies/Catagoreies';
 
 
 import HomeBenar from '../HomeBenar/HomeBenar';
+import Section from '../Section/Section';
 
 
 const Home = () => {
@@ -15,7 +16,9 @@ const Home = () => {
     return (
         <div >
             <HomeBenar></HomeBenar>
+            
             <Catagoreies catagorys={catagorys}></Catagoreies>
+            <Section></Section>
             
             
             
