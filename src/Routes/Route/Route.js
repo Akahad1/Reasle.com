@@ -9,6 +9,7 @@ import Login from "../../Pages/Login/Login";
 import AddProducts from "../../Pages/SellerInformation/AddProducts/AddProducts";
 import MyProducts from "../../Pages/SellerInformation/MyProducts/MyProducts";
 import SingUp from "../../Pages/SingUp/SingUp";
+import AllUsers from "../../Pages/UserInformation/AllUsers/AllUsers";
 import MyOrders from "../../Pages/UserInformation/MyOrders/MyOrders";
 import PrivetRoute from "../PrivetRoute/PrivetRoute";
 
@@ -30,7 +31,8 @@ children:[
     {path:'/Deshborad',element:<DashBoard></DashBoard>},
     {path:"/Deshborad/myorders",element: <PrivetRoute><MyOrders></MyOrders></PrivetRoute>},
     {path:'/Deshborad/addproduct',element:<AddProducts></AddProducts>},
-    {path:'/Deshborad/myproducts',element:<MyProducts></MyProducts>}
+    {path:'/Deshborad/myproducts',element:<MyProducts></MyProducts>},
+    {path:"/Deshborad/alluser",element:<AllUsers></AllUsers>}
 
 
 ]
