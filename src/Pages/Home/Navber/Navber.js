@@ -15,13 +15,14 @@ const Navber = () => {
     <li><Link to='/'>Home</Link></li>
     <li><Link to='/singup'>Singup</Link></li>
     <li><Link to='/blogs'>Blogs</Link></li>
-    <li><Link to='/login'>Login</Link></li>
+    
     <li><Link to='/Deshborad'>Deshboarad</Link></li>
+    <li><Link to='/login'>Login</Link></li>
 
-
-    <button onClick={signOuthandler}>Log Out</button>
-    <button>{user?.email}</button>
-    <button>{user?.displayName}</button>
+    {user?.uid&&
+    <button onClick={signOuthandler}>Log Out</button>}
+    <li><button className='text-white font-thin' >{user?.email}</button></li>
+    
 
   </>
 

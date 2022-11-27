@@ -1,3 +1,4 @@
+import { async } from '@firebase/util';
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { useContext } from 'react';
@@ -5,6 +6,7 @@ import { AuthContext } from '../../../AuthProvider/AuthProvider';
 
 const AllUsers = () => {
     // const {user}=useContext(AuthContext)
+
     const {data:Users=[],refetch}=useQuery({
         queryKey:['users'],
         queryFn:async()=>{
@@ -30,6 +32,18 @@ const AllUsers = () => {
         })
 
     }
+    const deleteUersHandler=(id)=>{
+        fetch(`http://localhost:5000/users/${id}`,{
+            method:"DELETE",
+            headers:{
+                authorization :`bearer ${localStorage.getItem('accesToken')}`
+              }
+        })
+        .then(res=>res.json())
+        .then(data=>{console.log(data)
+            refetch()})
+
+    }
     return (
         <div>
              <div className="overflow-x-auto mt-5">
@@ -43,6 +57,7 @@ const AllUsers = () => {
         <th>Email</th>
         <th>Role</th>
         <th>Add Admin</th>
+        <th>Delete</th>
         
        
       </tr>
@@ -58,6 +73,7 @@ const AllUsers = () => {
         
         <td>{user1.role}</td>
         <td>{ user1?.role !== 'admin' &&<button onClick={()=>handelMakeadmin(user1._id)} className='btn btn-xs btn-primary'>Make admin</button>}</td>
+        <td><button onClick={()=>deleteUersHandler(user1._id)} className='btn btn-xs btn-primary'>Delete</button></td>
         
       
       

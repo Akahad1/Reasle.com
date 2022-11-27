@@ -1,8 +1,9 @@
 import React from 'react';
 import { FaMapMarkerAlt } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const MyProduct = ({sellerProduct}) => {
-    const {name,img,Location,OriginalPrice,ResalePrice,UseYears,catagoryId} =sellerProduct;
+    const {name,img,Location,OriginalPrice,ResalePrice,UseYears,_id} =sellerProduct;
     return (
         <div className='ml-5'>
             <div className="card card-compact w-96 bg-base-100 mt-5 ml-6 gap-6 shadow-xl">
@@ -15,7 +16,7 @@ const MyProduct = ({sellerProduct}) => {
                     <p>Location : <FaMapMarkerAlt className='inline' /> { Location}</p>
                     <div className="card-actions  mt-3">
                         {/* <label htmlFor="bookingModal" className="btn btn-primary">Book Now</label> */}
-                        <button className='btn btn-secondary'>Adverties</button>
+                        <Link to><button  className='btn btn-secondary'>Adverties</button></Link>
                     </div>
                 </div>
                 

@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import useAdmin from '../../hook/UseAdmin/UseAdmin';
+import useSellers from '../../hook/UseSellers/UseSellers';
 import UseUser from '../../hook/UseUser/UseUser';
 import DashBoard from '../../Pages/DashBoard/DashBoard';
 import Navber from '../../Pages/Home/Navber/Navber';
@@ -11,6 +12,7 @@ import Footer from '../../Shared/Footer/Footer';
 const DasebordLayout = () => {
     const {user}=useContext(AuthContext)
     const[isadmin]=useAdmin(user?.email)
+    const [isSellers]=useSellers(user?.email)
     const [isUser]=UseUser(user?.email)
     return (
         <div className=''>
@@ -27,8 +29,10 @@ const DasebordLayout = () => {
                             <ul class="flex flex-col h-screen overflow-hidden bg-slate-800 border-shadow">
                                <div className='p-6'>
                                {isUser &&<p className=' text-white font-thin mt-2'><Link to='/Deshborad/myorders'>My Orders</Link></p>}
-                               <p className=' text-white font-thin mt-2'><Link to='/Deshborad/addproduct'>Add Product</Link></p>
+                               {isSellers &&
+                               <> <p className=' text-white font-thin mt-2'><Link to='/Deshborad/addproduct'>Add Product</Link></p>
                                <p className=' text-white font-thin mt-2'><Link to='/Deshborad/myproducts'>My Products</Link></p>
+                               <p className=' text-white font-thin mt-2'><Link to='/Deshborad/advertisted'>Advertisted</Link></p></>}
                                { isadmin &&<p className=' text-white font-thin mt-2'><Link to='/Deshborad/alluser'>All User</Link></p>}
                                {/* <p className=' text-white font-thin mt-2'><Link to='/Deshborad/allbuyers'>ALL Buyers</Link></p> */}
                                </div>

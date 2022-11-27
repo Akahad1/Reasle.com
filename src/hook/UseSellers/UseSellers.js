@@ -1,21 +1,21 @@
 import { useEffect } from "react"
 import { useState } from "react"
 
-const UseUser =email=>{
-    const [isUser,setUser]=useState(true)
+const useSellers =email=>{
+    const [isSellers,setIsSellers]=useState(true)
     const [isadminLoding,setadminLoding]=useState(true)
     useEffect(()=>{
         if(email){
-            fetch(`http://localhost:5000/users/user/${email}`)
+            fetch(`http://localhost:5000/users/seller/${email}`)
         .then(res=>res.json())
         .then(data=>{
-            console.log(data.isUser)
-            setUser(data.isUser)
+            console.log(data.isSellers)
+            setIsSellers(data.isSellers)
             
             setadminLoding(false)
         })
         }
     },[email])
-    return [isUser,setadminLoding]
+    return [isSellers,setadminLoding]
 }
-export default UseUser;
+export default useSellers;

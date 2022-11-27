@@ -7,10 +7,12 @@ import CatagoryProdutucs from "../../Pages/Home/CatagoryProducts/CatagoryProdutu
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 import AddProducts from "../../Pages/SellerInformation/AddProducts/AddProducts";
+import Advertisted from "../../Pages/SellerInformation/Advertisted/Advertisted";
 import MyProducts from "../../Pages/SellerInformation/MyProducts/MyProducts";
 import SingUp from "../../Pages/SingUp/SingUp";
 import AllUsers from "../../Pages/UserInformation/AllUsers/AllUsers";
 import MyOrders from "../../Pages/UserInformation/MyOrders/MyOrders";
+
 import PrivetRoute from "../PrivetRoute/PrivetRoute";
 
  const router =createBrowserRouter([
@@ -28,11 +30,12 @@ import PrivetRoute from "../PrivetRoute/PrivetRoute";
 },
 {path:'/Deshborad',element:<DasebordLayout></DasebordLayout>,
 children:[
-    {path:'/Deshborad',element:<DashBoard></DashBoard>},
+    {path:'/Deshborad',element:<PrivetRoute><DashBoard></DashBoard></PrivetRoute>},
     {path:"/Deshborad/myorders",element: <PrivetRoute><MyOrders></MyOrders></PrivetRoute>},
-    {path:'/Deshborad/addproduct',element:<AddProducts></AddProducts>},
-    {path:'/Deshborad/myproducts',element:<MyProducts></MyProducts>},
-    {path:"/Deshborad/alluser",element:<AllUsers></AllUsers>}
+    {path:'/Deshborad/addproduct',element:<PrivetRoute><AddProducts></AddProducts></PrivetRoute>},
+    {path:'/Deshborad/myproducts',element:<PrivetRoute><MyProducts></MyProducts></PrivetRoute>},
+    {path:"/Deshborad/alluser",element:<PrivetRoute><AllUsers></AllUsers></PrivetRoute>},
+    {path:"/Deshborad/advertisted",element:<PrivetRoute><Advertisted></Advertisted></PrivetRoute>}
 
 
 ]

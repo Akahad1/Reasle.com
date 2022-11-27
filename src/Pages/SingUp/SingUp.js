@@ -65,6 +65,7 @@ const SingUp = () => {
     logInGoogle()
     .then(result=>{
       const user=result.user;
+      setCreateUserEmail(user.email)
       console.log(user)
     })
     .catch(error=>console.log(error))
