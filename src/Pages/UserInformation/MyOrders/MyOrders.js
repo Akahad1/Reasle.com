@@ -5,13 +5,17 @@ import { useEffect } from 'react';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
-import Myorder from '../Myoder/Myorder';
 
 const MyOrders = () => {
     const{user}=useContext(AuthContext)
     const [oders,setoders]=useState([])
     useEffect(()=>{
-        fetch(`http://localhost:5000/booking?email=${user?.email}`)
+        fetch(`http://localhost:5000/booking?email=${user?.email}`,{
+          headers:{
+            authorization :`bearer ${localStorage.getItem('accesToken')}`
+          }
+
+        })
         .then(res=>res.json())
         .then(data=>{
             console.log(data)

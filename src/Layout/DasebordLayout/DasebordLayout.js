@@ -2,10 +2,11 @@ import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import DashBoard from '../../Pages/DashBoard/DashBoard';
 import Navber from '../../Pages/Home/Navber/Navber';
+import Footer from '../../Shared/Footer/Footer';
 
 const DasebordLayout = () => {
     return (
-        <div className='h-screen'>
+        <div className=''>
             <Navber></Navber>
             <div class="container mx-auto">
                 <div class="flex flex-row flex-wrap py-4">
@@ -18,7 +19,11 @@ const DasebordLayout = () => {
 
                             <ul class="flex flex-col h-screen overflow-hidden bg-slate-800 border-shadow">
                                <div className='p-6'>
-                               <Link to='/Deshborad/myorders'>My Orders</Link>
+                               <p className=' text-white font-thin mt-2'><Link to='/Deshborad/myorders'>My Orders</Link></p>
+                               <p className=' text-white font-thin mt-2'><Link to='/Deshborad/addproduct'>Add Product</Link></p>
+                               <p className=' text-white font-thin mt-2'><Link to='/Deshborad/myproducts'>My Products</Link></p>
+                               <p className=' text-white font-thin mt-2'><Link to='/Deshborad/allsellers'>All Sellers</Link></p>
+                               <p className=' text-white font-thin mt-2'><Link to='/Deshborad/myproducts'>My Products</Link></p>
                                </div>
                                 
                                 
@@ -28,6 +33,7 @@ const DasebordLayout = () => {
 
                 </div>
             </div>
+            <Footer></Footer>
 
 
 

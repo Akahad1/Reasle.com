@@ -7,7 +7,7 @@ const CatagoryProdutucs = () => {
     
     console.log(Products)
     return (
-        <div className='h-screen grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-5 ml-20'>
+        <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-5 ml-20'>
             {
                 Products.map((product,i)=><CatagoryProduct
                  key={i}

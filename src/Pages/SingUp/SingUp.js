@@ -4,10 +4,13 @@ import { FaGoogle} from 'react-icons/fa';
 import { useContext } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { useState } from 'react';
+import useToken from '../../hook/UseToken/UseToken';
 
 const SingUp = () => {
   const {createEamilPassword,logInGoogle,profileUpdate}=useContext(AuthContext)
   const loction =useLocation()
+  const [createUserEmail,setCreateUserEmail]=useState('')
+  const [token]=useToken(createUserEmail)
   const navigate =useNavigate()
   const [Error,setError]=useState()
   const from=loction.state?.from.pathname || '/'
@@ -44,7 +47,10 @@ const SingUp = () => {
         body:JSON.stringify(users)
       })
       .then(res=>res.json())
-      .then(data=>console.log(data))
+      .then(data=>{
+        console.log(data)
+        setCreateUserEmail(email)
+      })
 
       // navigate(from ,{replace:true})
       
@@ -86,7 +92,7 @@ const SingUp = () => {
       <div className="hero-content flex-col  lg:flex-row-reverse">
    
     
-   <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+   <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100">
    
      <div className="card-body">
      <p className='text-center text-2xl font-signature'>Sing Up</p>

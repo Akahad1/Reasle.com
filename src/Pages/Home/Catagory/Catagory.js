@@ -2,8 +2,10 @@ import React from 'react';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+
 const Catagory = ({allCatagory}) => {
     const {name,img,descripetion,_id}=allCatagory;
+    console.log(allCatagory)
     
     return (
         <div className='m-7'>
@@ -16,10 +18,11 @@ const Catagory = ({allCatagory}) => {
     <p>{descripetion
 }</p>
     <div className="card-actions">
-      <Link to={`/catagory/${_id}`}><button className="btn btn-primary">See Products</button></Link>
+      <Link to={`/products/${_id}`}><button className="btn btn-primary">See Products</button></Link>
     </div>
   </div>
 </div>
+
             
         </div>
     );
