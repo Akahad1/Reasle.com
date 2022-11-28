@@ -5,15 +5,19 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 import useAdmin from '../../hook/UseAdmin/UseAdmin';
 import useSellers from '../../hook/UseSellers/UseSellers';
 import UseUser from '../../hook/UseUser/UseUser';
+import Looding from '../../Looding/Looding';
 import DashBoard from '../../Pages/DashBoard/DashBoard';
 import Navber from '../../Pages/Home/Navber/Navber';
 import Footer from '../../Shared/Footer/Footer';
 
 const DasebordLayout = () => {
-    const {user}=useContext(AuthContext)
+    const {user ,loding}=useContext(AuthContext)
     const[isadmin]=useAdmin(user?.email)
     const [isSellers]=useSellers(user?.email)
     const [isUser]=UseUser(user?.email)
+    // if(loding){
+    //     return <Looding></Looding>
+    // }
     return (
         <div className=''>
             <Navber></Navber>

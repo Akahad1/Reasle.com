@@ -10,7 +10,7 @@ const MyOrders = () => {
     const{user}=useContext(AuthContext)
     const [oders,setoders]=useState([])
     useEffect(()=>{
-        fetch(`http://localhost:5000/booking?email=${user?.email}`,{
+        fetch(`https://resale-com-server.vercel.app/booking?email=${user?.email}`,{
           headers:{
             authorization :`bearer ${localStorage.getItem('accesToken')}`
           }

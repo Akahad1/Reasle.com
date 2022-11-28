@@ -21,7 +21,7 @@ const Navber = () => {
 
     {user?.uid&&
     <button onClick={signOuthandler}>Log Out</button>}
-    <li><button className='text-white font-thin' >{user?.email}</button></li>
+    {/* <li><button className='text-white font-thin' >{user?.email}</button></li> */}
     
 
   </>

@@ -5,6 +5,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { useState } from 'react';
 import useToken from '../../hook/UseToken/UseToken';
+import toast from 'react-hot-toast';
 
 const SingUp = () => {
   const {createEamilPassword,logInGoogle,profileUpdate}=useContext(AuthContext)
@@ -31,6 +32,7 @@ const SingUp = () => {
       const user=result.user;
       console.log(user)
       allUpdate(name,PhotoUrl)
+      toast.success('Successfully toasted!')
       form.reset()
       const users={
         name,
@@ -38,7 +40,7 @@ const SingUp = () => {
         role:option,
         password
       }
-      fetch('http://localhost:5000/users',{
+      fetch('https://resale-com-server.vercel.app/users',{
         method:"POST",
         headers:{
           'content-type': 'application/json'

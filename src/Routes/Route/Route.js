@@ -23,7 +23,7 @@ import PrivetRoute from "../PrivetRoute/PrivetRoute";
         {path:'/login',element:<Login></Login>},
         {path:'/singup',element:<SingUp></SingUp>},
         {path:'/products/:id',element:<PrivetRoute><CatagoryProdutucs></CatagoryProdutucs></PrivetRoute>,
-        loader: async({params})=>fetch(`http://localhost:5000/products/${params.id}`)
+        loader: async({params})=>fetch(`https://resale-com-server.vercel.app/products/${params.id}`)
     },
     {path:'/blogs',element:<Blogs></Blogs>}
     ],

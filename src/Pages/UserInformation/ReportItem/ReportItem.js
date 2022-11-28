@@ -4,7 +4,7 @@ import { useState } from 'react';
 const ReportItem = () => {
     const [report,setReport]=useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/report',{
+        fetch('https://resale-com-server.vercel.app/report',{
           headers:{
             headers:{
               authorization: `berab ${localStorage.getItem('accesToken')}`

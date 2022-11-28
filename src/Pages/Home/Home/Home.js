@@ -9,7 +9,7 @@ import Section from '../Section/Section';
 const Home = () => {
     const [catagorys,setCatagorys]=useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/catagory')
+        fetch('https://resale-com-server.vercel.app/catagory')
         .then(res=>res.json())
         .then(data=>setCatagorys(data))
     },[])
