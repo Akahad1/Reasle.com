@@ -4,7 +4,13 @@ import { useState } from 'react';
 const ReportItem = () => {
     const [report,setReport]=useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/report')
+        fetch('http://localhost:5000/report',{
+          headers:{
+            headers:{
+              authorization: `berab ${localStorage.getItem('accesToken')}`
+          }
+          }
+        })
         .then(res=>res.json())
         .then(data=>setReport(data))
     },[])

@@ -1,3 +1,12 @@
+* admin Email= aksdsh1233345@gmil.com
+* admin Password= 123123
+
+
+* This project name is Resale.com
+* It use application is react javascrit html css tailwind css etc
+* This project sever site link=
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
