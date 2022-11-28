@@ -4,7 +4,7 @@
 
 * This project name is Resale.com
 * It use application is react javascrit html css tailwind css etc
-* This project sever site link=
+* This project sever site link=https://resale-com-server.vercel.app
 
 
 # Getting Started with Create React App
