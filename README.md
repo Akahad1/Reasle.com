@@ -1,5 +1,5 @@
-* admin Email= aksdsh1233345@gmil.com
-* admin Password= 123123
+* admin Email:aksdsh1233345@gmil.com
+* admin Password:123123
 
 
 * This project name is Resale.com

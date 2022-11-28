@@ -6,10 +6,10 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Login = () => {
     const{logInGoogle,logIn}=useContext(AuthContext)
-    const loction=useLocation()
+    const location=useLocation()
     const naveget=useNavigate()
 
-    const from=loction.state?.from.pathname || '/'
+    const from =location.state?.from?.pathname || '/'
 
     const loginHandler=(event)=>{
         event.preventDefault()
